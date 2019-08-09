@@ -14,9 +14,11 @@ for (var i = 0; i < btn.length; i++) {
 }
 
 /*Loading*/
+var parallel = document.querySelector('.parallel');
 window.addEventListener("load", function(){
 	const loader = document.querySelector(".loader");
 	loader.className += " hidden";
+	parallel.style.animationName = "moveRight";
 });
 
 /*Active Class Pass onscoll*/
@@ -32,21 +34,14 @@ window.addEventListener('scroll', function(){
 });
 
 /*Hide Navigation onscroll*/
-
-var mobile = window.matchMedia("(max-width: 1050px)")
-
-var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-
-if(mobile.matches){
-	navbar.style.top = "0";
-} else{
-	if (prevScrollpos > currentScrollPos) {
-  		navbar.style.top = "0";
-  } else {
-  		navbar.style.top = "-80px";
+	if (document.documentElement.scrollTop > 150 || document.body.scrollTop > 150) {
+	    navbar.style.background = "#fff";
+	    navbar.style.boxShadow = "0 1px 5px 0 #222";
   }
-}
-  prevScrollpos = currentScrollPos;
+
+  	else{
+  		navbar.style.background = "transparent";
+  		navbar.style.boxShadow = "";
+  	}
 }
