@@ -34,14 +34,19 @@ window.addEventListener('scroll', function(){
 });
 
 /*Hide Navigation onscroll*/
+var mobile = window.matchMedia("(max-width: 1050px)")
 window.onscroll = function() {
+if (mobile.matches) {
+	navbar.style.background = "#fff";
+  	navbar.style.boxShadow = "none";
+} else {
 	if (document.documentElement.scrollTop > 150 || document.body.scrollTop > 150) {
-	    navbar.style.background = "#fff";
-	    navbar.style.boxShadow = "0 1px 5px 0 #222";
+		    navbar.style.background = "#fff";
+		    navbar.style.boxShadow = "0 1px 5px 0 #222";
+	} else{
+	  		navbar.style.background = "transparent";
+	  		navbar.style.boxShadow = "none";
+	  	}
   }
-
-  	else{
-  		navbar.style.background = "transparent";
-  		navbar.style.boxShadow = "";
-  	}
+	
 }
