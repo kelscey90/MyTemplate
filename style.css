@@ -58,7 +58,7 @@ p, li{
 	padding: 10px 50px;
 	z-index: 100;
 	text-transform: uppercase;
-	transition: .5s ease-out;
+	transition: .3s ease-out;
 }
 
 #navbar .logo{
@@ -133,6 +133,13 @@ p, li{
 	width: 40%;
 	display: flex;
 	align-items: center;
+	animation: 1s ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes moveRight{
+	from{transform: translateX(-150%);}
+	to{transform: translateX(0);}
 }
 
 #home .parallel-overlay{
